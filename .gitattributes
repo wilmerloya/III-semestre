@@ -1,2 +1,72 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+using System;
+
+namespace FigurasGeometricas
+{
+    // Clase Circulo que encapsula el radio y métodos para calcular área y perímetro
+    public class Circulo
+    {
+        private double radio;
+
+        // Constructor para inicializar el radio del círculo
+        public Circulo(double radio)
+        {
+            this.radio = radio;
+        }
+
+        // Método que calcula el área del círculo usando la fórmula π * r^2
+        public double CalcularArea()
+        {
+            return Math.PI * radio * radio;
+        }
+
+        // Método que calcula el perímetro (circunferencia) del círculo usando la fórmula 2 * π * r
+        public double CalcularPerimetro()
+        {
+            return 2 * Math.PI * radio;
+        }
+    }
+
+    // Clase Rectangulo que encapsula la base y altura y métodos para calcular área y perímetro
+    public class Rectangulo
+    {
+        private double baseRect;
+        private double altura;
+
+        // Constructor para inicializar base y altura del rectángulo
+        public Rectangulo(double baseRect, double altura)
+        {
+            this.baseRect = baseRect;
+            this.altura = altura;
+        }
+
+        // Método que calcula el área del rectángulo usando base * altura
+        public double CalcularArea()
+        {
+            return baseRect * altura;
+        }
+
+        // Método que calcula el perímetro del rectángulo usando 2*(base + altura)
+        public double CalcularPerimetro()
+        {
+            return 2 * (baseRect + altura);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Circulo c = new Circulo(5);
+            Console.WriteLine("Círculo:");
+            Console.WriteLine("Área: " + c.CalcularArea());
+            Console.WriteLine("Perímetro: " + c.CalcularPerimetro());
+
+            Rectangulo r = new Rectangulo(4, 6);
+            Console.WriteLine("\nRectángulo:");
+            Console.WriteLine("Área: " + r.CalcularArea());
+            Console.WriteLine("Perímetro: " + r.CalcularPerimetro());
+        }
+    }
+}
